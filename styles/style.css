@@ -57,7 +57,6 @@ ol {
   display: flex;
   align-items: flex-end;
   gap: 30px;
-  height: 534px;
 }
 
 .result__video-container {
@@ -113,7 +112,7 @@ ol {
   border-top-width: 1px;
   border-bottom-width: 1px;
   color: #fff;
-  font-family: Fira Sans Condensed;
+  font-family: inherit;
   font-weight: 400;
   font-size: 18px;
   line-height: 100%;
@@ -180,7 +179,7 @@ ol {
 }
 
 .button {
-  font-family: Fira Sans Condensed;
+  font-family: inherit;
   font-weight: 700;
   font-size: 18px;
   line-height: 100%;
@@ -222,10 +221,11 @@ ol {
   flex-direction: column;
   gap: 26px;
   max-height: 100%;
+  max-inline-size: 399px;
 }
 
 .title {
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 75px;
   line-height: 94%;
@@ -239,11 +239,11 @@ ol {
 
 .content__list-container {
   overflow-y: auto;
-  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   gap: 30px;
   position: relative;
+  height: 298px;
 }
 
 .content__list {
@@ -261,6 +261,7 @@ ol {
   text-decoration: none;
   color: #fff;
   cursor: pointer;
+  display: block
 }
 
 .content__card-link:active {
@@ -279,6 +280,10 @@ ol {
   outline: none;
 }
 
+.content__card-link_current {
+  background-color: #545050;
+}
+
 .content__card-link:focus-visible .content__video-card {
   outline: 1px solid #fff;
   outline-offset: -1px;
@@ -289,15 +294,22 @@ ol {
 }
 
 .content__video-card-title {
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 30px;
   line-height: 100%;
   letter-spacing: 0%;
   text-transform: uppercase;
+  white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
   margin-bottom: 6px;
+}
+
+.content__video-card-description-container {
+  flex-grow: 1;
+  flex-basis: 0;
+  overflow: hidden;
 }
 
 .content__video-card-description {
@@ -315,5 +327,5 @@ ol {
   flex-shrink: 1;
   object-position: right;
   flex-grow: 0;
-  object-fit: contain;
+  object-fit: cover;
 }
